@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .div {
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+        animation: mymove 3s infinite;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      .div2{
+        background-color: darkred;
+        display: none;
+      }
+
+      @keyframes mymove {
+        0% {
+          left: 0px;
+          background: red;
+          width: 300px;
+        }
+        90% {
+          left: 0px;
+          background: yellow;
+          width: 700px;
+          /* animation-play-state: paused; */
+        }
+        100%{
+          background-color: cadetblue;
+          width:700px;
+        }
+        
+      }
+    </style>
+  </head>
+  <body>
+    <input name="" id="btn" type="button" onmouseover="ani()" onmouseout="normal()" value="Click" />
+    <h1>The @keyframes Rule</h1>
+
+    <p id="div2">
+      <strong>Note:</strong> The @keyframes rule is not supported in Internet
+      Explorer 9 and earlier versions.
+    </p>
+
+    
+    <script>
+      var count=0;
+      
+      function ani() {
+        document.getElementById("div2").className = "div";
+      }
+
+      function normal(){
+        document.getElementById("div2").className = "div2";
+      }
+    </script>
+  </body>
+</html>
